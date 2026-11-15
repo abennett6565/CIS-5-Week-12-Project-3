@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-// Project 3 — Your Name
+// Project 3 — Andrew Bennett
 // CIS 5 Week 12 · Fifty students
 // Do not edit the boilerplate. It randomly generates 50 scores.
 // Do not type scores or names into this file.
@@ -14,24 +14,70 @@ void countGrades(const int scores[], int n, int& a, int& b, int& c, int& d, int&
   d = 0;
   failing = 0;
   if (n <= 0 || scores == nullptr) return;
-  // TODO: for loop. Add 1 to the matching count.
-  // A is 90 and up. B is 80 to 89. C is 70 to 79. D is 60 to 69.
-  // Failing is below 60. A 60 is a D. Do not print.
+  
+// iterate thrpugh array and increment each grade to the relevant letter grade or failing
+  for(int i = 0; i < n; i++)
+  {
+    if(scores[i] >= 90)
+    {
+      a += 1;
+    }
+    else if (scores[i] < 90 && scores[i] >= 80)
+    {
+      b += 1;
+    }
+    else if (scores[i] < 80 && scores[i] >= 70)
+    {
+      c += 1;
+    }
+    else if (scores[i] < 70 && scores[i] >= 60)
+    {
+      b += 1;
+    }
+    else
+    {
+      failing += 1;
+    }    
+  }
 }
 
 double average(const int scores[], int n) {
   if (n <= 0 || scores == nullptr) return 0.0;
-  // TODO: return the mean as a double (sum * 1.0 / n). Do not print.
-  return 0.0;
+  
+  int sum = 0;
+// calculate sum of all grades
+  for(int i = 0; i < n; i++)
+  {
+    sum += scores[i];
+  }
+//calculate mean, use * 1.0 to turn result into a double for decimal accuracey
+  return sum * 1.0 / n;
 }
 
 void officeHours(const int scores[], int n, int* failingCount) {
   if (failingCount != nullptr) *failingCount = 0;
   if (n <= 0 || scores == nullptr) return;
-  // TODO: while loop. If scores[i] is under 60, print:
-  // Student at index i needs to come to office hours.
-  // If failingCount is not nullptr, write how many lines you printed
-  // through *failingCount. If it is nullptr, do not write through it.
+
+  while (true)
+  {
+    for(int i = 0; i < n; i++)
+    {
+      // print out a notice to students with failing grades
+      if(scores[i] < 60)
+      {
+        std::cout << "Student at index " << scores[i] << " needs to come to office hours." << std::endl;
+        // if counter isn't empty then increment counter for every failed grade
+        if(failingCount != nullptr)
+        {
+          *failingCount += 1;
+        }
+      }
+    }
+    // end while loop when finished
+    break;
+
+  }
+  
 }
 
 int main() {

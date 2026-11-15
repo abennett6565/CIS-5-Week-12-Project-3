@@ -6,7 +6,7 @@
 Paste a link to a short video of you running this assignment (tool + code + run).
 Work without a working video link is incomplete.
 
-**Your demo:** _add your link here_
+**Your demo:** https://drive.google.com/file/d/1UkQBVhoXwjIbOXrcJ937Yhknuhg7wYyR/view?usp=sharing
 
 **Week 12 · Project 3**  
 **Theme:** Project 2’s report, on fifty random scores  
@@ -57,6 +57,97 @@ Student at index i needs to come to office hours.
 5. `officeHours` prints one line per score under 60, and writes the line count through `int*` when the pointer is not `nullptr`.
 6. `main` calls the three functions. The `Failing` count and `Office hours` are the same number.
 7. In the README, write a short explanation in your own words. Name the three functions. Say what the references change in `main`, what the pointer writes, what a `nullptr` skips, and why `average` returns a `double`. Under that paragraph, paste the run you actually got.
+
+## Explanation
+The three functions are countGrades, average and officeHours. Inside main countGrades changes the value of the a, b, c, d, and failing variables via reference. Average doesn't change any values and instead returns it's own value based on the pointer to the start of the scores array, this is returned as a double because in order to calculate the mean division is required which can result in a non-whole number which an int variable cannot accurately represent. OfficeHours changes the value of the lines variable via pointer dereference, nullptr will skip writing a value to the dereferenced variable contained inside the failingCount pointer as it holds no value.
+
+```
+[0] 26
+[1] 64
+[2] 71
+[3] 3
+[4] 7
+[5] 64
+[6] 20
+[7] 76
+[8] 25
+[9] 48
+[10] 29
+[11] 76
+[12] 55
+[13] 71
+[14] 61
+[15] 68
+[16] 51
+[17] 40
+[18] 89
+[19] 85
+[20] 32
+[21] 11
+[22] 84
+[23] 55
+[24] 97
+[25] 73
+[26] 90
+[27] 61
+[28] 5
+[29] 58
+[30] 14
+[31] 53
+[32] 67
+[33] 37
+[34] 49
+[35] 59
+[36] 15
+[37] 82
+[38] 98
+[39] 13
+[40] 6
+[41] 62
+[42] 68
+[43] 78
+[44] 26
+[45] 28
+[46] 4
+[47] 83
+[48] 22
+[49] 27
+A: 3
+B: 13
+C: 6
+D: 0
+Failing: 28
+Average: 49.72
+Student at index 26 needs to come to office hours.
+Student at index 3 needs to come to office hours.
+Student at index 7 needs to come to office hours.
+Student at index 20 needs to come to office hours.
+Student at index 25 needs to come to office hours.
+Student at index 48 needs to come to office hours.
+Student at index 29 needs to come to office hours.
+Student at index 55 needs to come to office hours.
+Student at index 51 needs to come to office hours.
+Student at index 40 needs to come to office hours.
+Student at index 32 needs to come to office hours.
+Student at index 11 needs to come to office hours.
+Student at index 55 needs to come to office hours.
+Student at index 5 needs to come to office hours.
+Student at index 58 needs to come to office hours.
+Student at index 14 needs to come to office hours.
+Student at index 53 needs to come to office hours.
+Student at index 37 needs to come to office hours.
+Student at index 49 needs to come to office hours.
+Student at index 59 needs to come to office hours.
+Student at index 15 needs to come to office hours.
+Student at index 13 needs to come to office hours.
+Student at index 6 needs to come to office hours.
+Student at index 26 needs to come to office hours.
+Student at index 28 needs to come to office hours.
+Student at index 4 needs to come to office hours.
+Student at index 22 needs to come to office hours.
+Student at index 27 needs to come to office hours.
+Office hours: 28
+```
 
 ## Sample shape
 This shows the shape of the report. Your fifty scores are random, so these numbers will not appear.
