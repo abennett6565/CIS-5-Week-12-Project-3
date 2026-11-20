@@ -32,7 +32,7 @@ void countGrades(const int scores[], int n, int& a, int& b, int& c, int& d, int&
     }
     else if (scores[i] < 70 && scores[i] >= 60)
     {
-      b += 1;
+      d += 1;
     }
     else
     {
@@ -58,24 +58,25 @@ void officeHours(const int scores[], int n, int* failingCount) {
   if (failingCount != nullptr) *failingCount = 0;
   if (n <= 0 || scores == nullptr) return;
 
-  while (true)
+  int counter = 0;
+
+  while (counter < n)
   {
     for(int i = 0; i < n; i++)
     {
       // print out a notice to students with failing grades
       if(scores[i] < 60)
       {
-        std::cout << "Student at index " << scores[i] << " needs to come to office hours." << std::endl;
+        std::cout << "Student at index " << i << " needs to come to office hours." << std::endl;
         // if counter isn't empty then increment counter for every failed grade
         if(failingCount != nullptr)
         {
           *failingCount += 1;
         }
       }
+      // every time the for loop iterates, increase counter by 1 to complete the while loop once the array has been walked
+      counter += 1;
     }
-    // end while loop when finished
-    break;
-
   }
   
 }
